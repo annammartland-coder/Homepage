@@ -11,6 +11,16 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
+.wellbeing-logo {
+  display: block;
+  max-width: 85%;
+  margin: 20px auto 10px;
+  background: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(160deg,#f5e8ff 0%,#ede0ff 100%);
@@ -108,9 +118,11 @@ body {
   <img src="https://userdata-d7b62b.stack.tryrelevance.com/conversation/files/658d5031-e82e-4cdf-bbc2-6d1c31a81054.png">
 </div>
 
+<img src="AVEVA-Wellbeing-Network-Logo-2024 NEW.png" class="wellbeing-logo">
+
 <div class="title-section">
   <h1>Wellbeing Bingo</h1>
-  <p>Select a bingo card or explore wellbeing resources 💜</p>
+  <p>Select a bingo card or explore wellbeing resources! </p>
 </div>
 
 <div class="menu">
