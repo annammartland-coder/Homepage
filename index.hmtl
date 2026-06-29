@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WELLBEING Bingo - AVEVA</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(160deg,#f5e8ff 0%,#ede0ff 100%);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(92,0,163,0.18);
+}
+
+.header {
+  background: #3b0070;
+  padding: 16px;
+  text-align: center;
+}
+
+.header img {
+  height: 42px;
+}
+
+.title-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.title-section h1 {
+  color: #5c00a3;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.title-section p {
+  font-size: 13px;
+  color: #555;
+}
+
+.menu {
+  padding: 20px;
+}
+
+.menu-title {
+  color: #5c00a3;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.menu-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #5c00a3;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: transform .1s;
+}
+
+.menu-card:hover {
+  transform: scale(1.03);
+  background: #f6efff;
+}
+
+.menu-text {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.menu-icon {
+  color: #5c00a3;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+  <img src="https://userdata-d7b62b.stack.tryrelevance.com/conversation/files/658d5031-e82e-4cdf-bbc2-6d1c31a81054.png">
+</div>
+
+<div class="title-section">
+  <h1>Wellbeing Bingo</h1>
+  <p>Select a bingo card or explore wellbeing resources 💜</p>
+</div>
+
+<div class="menu">
+
+<div class="menu-title">Bingo Cards</div>
+
+<a href="bingo1.html" class="menu-card">
+  <span class="menu-text">WELLBEING Bingo - AVEVA - 1</span>
+  <i class="fa-solid fa-arrow-right menu-icon"></i>
+</a>
+
+<a href="bingo2.html" class="menu-card">
+  <span class="menu-text">WELLBEING Bingo - AVEVA - 2</span>
+  <i class="fa-solid fa-arrow-right menu-icon"></i>
+</a>
+
+<a href="bingo3.html" class="menu-card">
+  <span class="menu-text">WELLBEING Bingo - AVEVA - 3</span>
+  <i class="fa-solid fa-arrow-right menu-icon"></i>
+</a>
+
+<a href="bingo4.html" class="menu-card">
+  <span class="menu-text">WELLBEING Bingo - AVEVA - 4</span>
+  <i class="fa-solid fa-arrow-right menu-icon"></i>
+</a>
+
+<a href="bingo5.html" class="menu-card">
+  <span class="menu-text">WELLBEING Bingo - AVEVA - 5</span>
+  <i class="fa-solid fa-arrow-right menu-icon"></i>
+</a>
+
+<div class="menu-title" style="margin-top:20px;">Resources</div>
+
+<a href="resources.html" class="menu-card">
+  <span class="menu-text">Bingo Resources - AVEVA</span>
+  <i class="fa-solid fa-book menu-icon"></i>
+</a>
+
+</div>
+
+<div class="footer">
+  AVEVA Wellbeing Network
+</div>
+
+</div>
+
+</body>
+</html>
