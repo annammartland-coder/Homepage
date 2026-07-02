@@ -59,6 +59,15 @@ body {
   gap: 7px;
   padding: 12px;
   background: white;
+
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .bingo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
 }
 .tile {
   position: relative;
@@ -128,6 +137,16 @@ body {
 @keyframes slideIn {
   from { opacity:0; transform:translateY(-10px); }
   to   { opacity:1; transform:translateY(0); }
+
+@media (max-width: 768px) {
+    .tile {
+        font-size: 12px;
+    }
+
+    .tile i {
+        font-size: 20px;
+    }
+
 }
 </style>
 </head>
