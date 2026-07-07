@@ -29,11 +29,9 @@ body {
   padding: 16px 20px 14px;
   text-align: center;
 }
-.header img {
-  height: 42px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
+.AVEVA-logo { max-height: 50px; width: auto; display: block; margin: 0 auto; } 
+.wellbeing-logo { display: block; max-width: 85%; margin: 20px auto 10px; background: transparent; padding: 0; border-radius: 0;
+
 }
 .title-section {
   padding: 18px 20px 6px;
@@ -52,6 +50,7 @@ body {
   color: #5c00a3;
   letter-spacing: 3px;
   margin-top: 2px;
+  text-align: center;
 }
 .grid {
   display: grid;
@@ -59,6 +58,15 @@ body {
   gap: 7px;
   padding: 12px;
   background: white;
+
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
 }
 .tile {
   position: relative;
@@ -129,20 +137,33 @@ body {
   from { opacity:0; transform:translateY(-10px); }
   to   { opacity:1; transform:translateY(0); }
 }
+@media (max-width: 768px) {
+    .tile {
+        font-size: 12px;
+    }
+
+    .tile i {
+        font-size: 20px;
+    }
+
+}
 </style>
 </head>
 <body>
 <div class="card">
   <div class="header">
-    <img src="https://userdata-d7b62b.stack.tryrelevance.com/conversation/files/658d5031-e82e-4cdf-bbc2-6d1c31a81054.png" alt="AVEVA Logo">
-  </div>
+      <img src="AVEVA-logo.png" alt="AVEVA Logo" class="AVEVA-logo">
+</div>
+  
+<div class="title-section">
+    <img src="wellbeing-logo.png" class="wellbeing-logo" alt="Wellbeing Logo">
+
+</div>
+
+
   <div id="bingoBanner" class="bingo-banner">&#9733; BINGO! All tiles completed! &#9733;</div>
-  <div class="title-section">
-    <img src="https://userdata-d7b62b.stack.tryrelevance.com/conversation/files/748a73cb-7140-4fa0-b3d2-027c83572fae.png" alt="AVEVA Wellbeing Network Logo">
     <div class="bingo-word">Bingo</div>
-  </div>
- 
-<div class="grid" id="grid">
+  <div class="grid" id="grid">
 
 <div class="tile" onclick="tog(this)">
   <span class="tile-text">Bring someone a snack</span>
