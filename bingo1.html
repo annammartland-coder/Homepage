@@ -198,11 +198,12 @@ body {
   <div class="bottom-bar"><div class="accent"></div><div class="accent"></div></div>
 </div>
 
+
 <script>
 function saveState() {
-  const states = [];
+  var states = [];
 
-  document.querySelectorAll(".tile").forEach((tile, index) => {
+  document.querySelectorAll(".tile").forEach(function(tile, index) {
     states[index] = tile.classList.contains("completed");
   });
 
@@ -210,17 +211,15 @@ function saveState() {
 }
 
 function loadState() {
-  const states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
+  var states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
 
   if (!states) return;
 
-  document.querySelectorAll(".tile").forEach((tile, index) => {
+  document.querySelectorAll(".tile").forEach(function(tile, index) {
     if (states[index]) {
       tile.classList.add("completed");
     }
   });
-
-  upd();
 }
 
 function tog(tile) {
@@ -249,8 +248,8 @@ function upd() {
 }
 
 function resetAll() {
-  document.querySelectorAll(".tile.completed").forEach(function(t) {
-    t.classList.remove("completed");
+  document.querySelectorAll(".tile.completed").forEach(function(tile) {
+    tile.classList.remove("completed");
   });
 
   localStorage.removeItem("wellbeingBingoState");
@@ -262,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
   upd();
 });
 </script>
+
 
 </body>
 </html>
