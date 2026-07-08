@@ -197,29 +197,69 @@ body {
   </div>
   <div class="bottom-bar"><div class="accent"></div><div class="accent"></div></div>
 </div>
+
 <script>
+function saveState() {
+  var states = [];
+
+  document.querySelectorAll(".tile").forEach(function(tile, index) {
+    states[index] = tile.classList.contains("completed");
+  });
+
+  localStorage.setItem("wellbeingBingoState", JSON.stringify(states));
+}
+
+function loadState() {
+  var states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
+
+  if (!states) return;
+
+  document.querySelectorAll(".tile").forEach(function(tile, index) {
+    if (states[index]) {
+      tile.classList.add("completed");
+    }
+  });
+}
+
 function tog(tile) {
   tile.classList.toggle("completed");
+  saveState();
   upd();
 }
+
 function upd() {
   var tiles = document.querySelectorAll(".tile");
   var done = document.querySelectorAll(".tile.completed").length;
   var total = tiles.length;
-  var pct = Math.round((done/total)*100);
+  var pct = Math.round((done / total) * 100);
+
   document.getElementById("bar").style.width = pct + "%";
+
   if (done === total) {
-    document.getElementById("prog").textContent = "All " + total + " tiles completed!";
+    document.getElementById("prog").textContent =
+      "All " + total + " tiles completed!";
     document.getElementById("bingoBanner").style.display = "block";
   } else {
-    document.getElementById("prog").textContent = done + " / " + total + " tiles completed";
+    document.getElementById("prog").textContent =
+      done + " / " + total + " tiles completed";
     document.getElementById("bingoBanner").style.display = "none";
   }
 }
+
 function resetAll() {
-  document.querySelectorAll(".tile.completed").forEach(function(t){ t.classList.remove("completed"); });
+  document.querySelectorAll(".tile.completed").forEach(function(tile) {
+    tile.classList.remove("completed");
+  });
+
+  localStorage.removeItem("wellbeingBingoState");
   upd();
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadState();
+  upd();
+});
 </script>
+
 </body>
 </html>
