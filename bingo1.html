@@ -198,9 +198,71 @@ body {
   <div class="bottom-bar"><div class="accent"></div><div class="accent"></div></div>
 </div>
 <script>
+
+<script>
+function saveState() {
+  const states = [];
+
+  document.querySelectorAll(".tile").forEach((tile, index) => {
+    states[index] = tile.classList.contains("completed");
+  });
+
+  localStorage.setItem("wellbeingBingoState", JSON.stringify(states));
+}
+
+function loadState() {
+  const states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
+
+  if (!states) return;
+
+  document.querySelectorAll(".tile").forEach((tile, index) => {
+    if (states[index]) {
+      tile.classList.add("completed");
+    }
+  });
+
+  upd();
+}
+
 function tog(tile) {
   tile.classList.toggle("completed");
+  saveState();
   upd();
+}
+
+function upd() {
+  var tiles = document.querySelectorAll(".tile");
+  var done = document.querySelectorAll(".tile.completed").length;
+  var total = tiles.length;
+  var pct = Math.round((done / total) * 100);
+
+  document.getElementById("bar").style.width = pct + "%";
+
+  if (done === total) {
+    document.getElementById("prog").textContent =
+      "All " + total + " tiles completed!";
+    document.getElementById("bingoBanner").style.display = "block";
+  } else {
+    document.getElementById("prog").textContent =
+      done + " / " + total + " tiles completed";
+    document.getElementById("bingoBanner").style.display = "none";
+  }
+}
+
+function resetAll() {
+  document
+    .querySelectorAll(".tile.completed")
+    .forEach(function (t) {
+      t.classList.remove("completed");
+    });
+
+  localStorage.removeItem("wellbeingBingoState");
+  upd();
+}
+
+document.addEventListener("DOMContentLoaded", loadState);
+</script>
+
 }
 function upd() {
   var tiles = document.querySelectorAll(".tile");
