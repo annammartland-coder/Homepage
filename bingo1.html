@@ -207,11 +207,20 @@ function saveState() {
     states[index] = tile.classList.contains("completed");
   });
 
-  localStorage.setItem("wellbeingBingoState", JSON.stringify(states));
+ 
+localStorage.setItem(
+  "bingoState_" + window.location.pathname,
+  JSON.stringify(states)
+);
+
 }
 
 function loadState() {
-  var states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
+  
+var states = JSON.parse(
+  localStorage.getItem("bingoState_" + window.location.pathname)
+);
+
 
   if (!states) return;
 
@@ -252,7 +261,11 @@ function resetAll() {
     tile.classList.remove("completed");
   });
 
-  localStorage.removeItem("wellbeingBingoState");
+  
+localStorage.removeItem(
+  "bingoState_" + window.location.pathname
+);
+;
   upd();
 }
 
