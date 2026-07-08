@@ -200,6 +200,8 @@ body {
 <script>
 
 <script>
+
+<script>
 function saveState() {
   const states = [];
 
@@ -250,11 +252,9 @@ function upd() {
 }
 
 function resetAll() {
-  document
-    .querySelectorAll(".tile.completed")
-    .forEach(function (t) {
-      t.classList.remove("completed");
-    });
+  document.querySelectorAll(".tile.completed").forEach(function(t) {
+    t.classList.remove("completed");
+  });
 
   localStorage.removeItem("wellbeingBingoState");
   upd();
@@ -262,26 +262,6 @@ function resetAll() {
 
 document.addEventListener("DOMContentLoaded", loadState);
 </script>
-
-}
-function upd() {
-  var tiles = document.querySelectorAll(".tile");
-  var done = document.querySelectorAll(".tile.completed").length;
-  var total = tiles.length;
-  var pct = Math.round((done/total)*100);
-  document.getElementById("bar").style.width = pct + "%";
-  if (done === total) {
-    document.getElementById("prog").textContent = "All " + total + " tiles completed!";
-    document.getElementById("bingoBanner").style.display = "block";
-  } else {
-    document.getElementById("prog").textContent = done + " / " + total + " tiles completed";
-    document.getElementById("bingoBanner").style.display = "none";
-  }
-}
-function resetAll() {
-  document.querySelectorAll(".tile.completed").forEach(function(t){ t.classList.remove("completed"); });
-  upd();
-}
-</script>
 </body>
 </html>
+
