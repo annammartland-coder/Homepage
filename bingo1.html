@@ -197,9 +197,6 @@ body {
   </div>
   <div class="bottom-bar"><div class="accent"></div><div class="accent"></div></div>
 </div>
-<script>
-
-<script>
 
 <script>
 function saveState() {
@@ -260,8 +257,11 @@ function resetAll() {
   upd();
 }
 
-document.addEventListener("DOMContentLoaded", loadState);
+document.addEventListener("DOMContentLoaded", function() {
+  loadState();
+  upd();
+});
 </script>
+
 </body>
 </html>
-
