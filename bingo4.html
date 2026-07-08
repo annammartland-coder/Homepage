@@ -299,7 +299,10 @@ body {
   <div class="bottom-bar"><div class="accent"></div><div class="accent"></div></div>
 </div>
 
+
 <script>
+const STORAGE_KEY = "bingo4";
+
 function saveState() {
   var states = [];
 
@@ -307,11 +310,11 @@ function saveState() {
     states[index] = tile.classList.contains("completed");
   });
 
-  localStorage.setItem("wellbeingBingoState", JSON.stringify(states));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(states));
 }
 
 function loadState() {
-  var states = JSON.parse(localStorage.getItem("wellbeingBingoState"));
+  var states = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
   if (!states) return;
 
@@ -352,7 +355,7 @@ function resetAll() {
     tile.classList.remove("completed");
   });
 
-  localStorage.removeItem("wellbeingBingoState");
+  localStorage.removeItem(STORAGE_KEY);
   upd();
 }
 
